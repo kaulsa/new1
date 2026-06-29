@@ -621,44 +621,50 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="section-header">
-            <h2>Ready to Transform Your Business?</h2>
-            <p>Let's discuss how our solutions can drive innovation and growth in your organization.</p>
-        </div>
-        
-        <div class="contact-form">
-            <form id="contactForm" action="https://formspree.io/f/mjgqkngg" method="POST">
-            <!-- Redirect after successful submission -->
-            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">         
-               
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="company">Company</label>
-                    <input type="text" id="company" name="company">
-                </div>
-                <div class="form-group">
-                    <label for="service">Service Interest</label>
-                    <select id="service" name="service" style="width: 100%; padding: 1rem; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 10px; color: #ffffff;">
-                        <option value="">Select a service</option>
-                        <option value="strategy">Business Strategy</option>
-                        <option value="Technology">Technology Transformation</option>
-                        <option value="Services">AI Professional Services</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Project Details</label>
-                    <textarea id="message" name="message" placeholder="Tell us about your AI goals and challenges..."></textarea>
-                </div>
-                <button type="submit" class="cta-button" style="width: 100%; font-size: 1.1rem;">Send Message</button>
-            </form>
+  <form id="contactForm" action="https://formspree.io/f/mjgqkngg" method="POST">
+
+    <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company">
+    </div>
+
+    <div class="form-group">
+        <label for="service">Service Interest</label>
+        <select id="service" name="service">
+            <option value="">Select a service</option>
+            <option value="Business Strategy">Business Strategy</option>
+            <option value="Technology Transformation">Technology Transformation</option>
+            <option value="AI Professional Services">AI Professional Services</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="message">Project Details *</label>
+        <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Tell us about your project..."
+            required></textarea>
+    </div>
+
+    <button type="submit" id="submitBtn" class="cta-button">
+        Send Message
+    </button>
+
+    <p id="formStatus" style="margin-top:20px;font-weight:600;"></p>
+
+</form>
         </div>
     </section>
 
