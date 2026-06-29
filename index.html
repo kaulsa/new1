@@ -629,6 +629,9 @@
         
         <div class="contact-form">
             <form id="contactForm" action="https://formspree.io/f/mjgqkngg" method="POST">
+            <!-- Redirect after successful submission -->
+            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">         
+               
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" required>
@@ -708,21 +711,6 @@
             } else {
                 header.style.background = 'rgba(10, 10, 15, 0.9)';
             }
-        });
-
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Show success message (in a real app, you'd send to a server)
-            alert('Thank you for your interest! We\'ll get back to you within 24 hours to discuss your AI transformation journey.');
-            
-            // Reset form
-            this.reset();
         });
 
         // Smooth scrolling for navigation links
