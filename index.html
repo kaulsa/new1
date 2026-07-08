@@ -763,7 +763,63 @@
         document.querySelectorAll('.service-card, .about-content, .contact-form').forEach(el => {
             observer.observe(el);
         });
-        const form = document.getElementById("contactForm");    
+        // Contact Form
+const form = document.getElementById("contactForm");
+
+if (form) {
+
+    const submitBtn = document.getElementById("submitBtn");
+    const status = document.getElementById("formStatus");
+
+    form.addEventListener("submit", async function(e) {
+
+        e.preventDefault();
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = "Sending...";
+
+        status.innerHTML = "";
+
+        try {
+
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+
+                status.style.color = "#64ffda";
+                status.innerHTML =
+                    "✓ Thank you! Your message has been sent successfully. We will contact you within one business day.";
+
+                form.reset();
+
+            } else {
+
+                status.style.color = "#ff6b6b";
+                status.innerHTML =
+                    "Sorry, something went wrong. Please try again.";
+
+            }
+
+        } catch (error) {
+
+            status.style.color = "#ff6b6b";
+            status.innerHTML =
+                "Unable to connect. Please try again.";
+
+        }
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "Send Message";
+
+    });
+
+}
     </script>
 </body>
 </html>
